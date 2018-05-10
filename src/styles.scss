@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 
+html, body {
+  margin: 0;
+}
+
 // GLOBAL STYLES
 
 .app-btn {
@@ -14,4 +18,8 @@
 
 body {
   font-family: Roboto, sans-serif;
+}
+
+.row {
+  margin: 2em 0;
 }

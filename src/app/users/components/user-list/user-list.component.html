@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="card m-2 flex-fill" *ngFor="let user of users$ | async">
+      <img class="card-img-top" src="{{ user.picture.large }}" alt="user picture">
+      <div class="card-body">
+        <h5 class="card-title"> {{ user.name.first }} {{ user.name.last }} </h5>
+        <p class="card-text">{{ user.email }}</p>
+        <p class="card-text">{{ user.phone }}</p>
+        <a class="btn btn-primary" [routerLink]="['/users', user.id.name]">Open</a>
+      </div>
+    </div>
+  </div>
+</div>

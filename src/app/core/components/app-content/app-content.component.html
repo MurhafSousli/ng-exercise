@@ -1,9 +1,9 @@
-<div class="app-content">
-  <div class="user-profile" *ngIf="isLoggedIn">
-    Hey {{user.firstName}} {{user.lastName}}! Good day ahead!
+<div class="app-content" *ngIf="auth.state$ | async; let state">
+  <div class="user-profile" *ngIf="state.isLoggedIn">
+    Hey {{state.user.firstName}} {{state.user.lastName}}! Good day ahead!
   </div>
   <div class="action-btn">
-    <button class="app-btn" *ngIf="!isLoggedIn" (click)="login()">Login</button>
-    <button class="app-btn" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+    <button class="app-btn" *ngIf="!state.isLoggedIn" (click)="auth.login('Ahsan', 'Ayaz')">Login</button>
+    <button class="app-btn" *ngIf="state.isLoggedIn" (click)="auth.logout()">Logout</button>
   </div>
 </div>

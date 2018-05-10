@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="mt-5" style="width: 300px">
+      <a class="btn btn-primary m-3" [routerLink]="['/users']">Back</a>
+
+      <div class="card m-3" *ngIf="user$ | async; let user">
+        <img class="card-img-top" src="{{ user.picture.large }}" alt="user picture">
+        <div class="card-body">
+          <h5 class="card-title"> {{ user.name.first }} {{ user.name.last }} </h5>
+          <p class="card-text">{{ user.email }}</p>
+          <p class="card-text">{{ user.phone }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
